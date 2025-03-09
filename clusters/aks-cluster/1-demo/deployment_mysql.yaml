@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myappsql 
-  namepace: default
+  namespace: default
   labels:
     name: myappsql-deploy
     tyre: backend 
