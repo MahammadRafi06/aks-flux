@@ -5,9 +5,9 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: local-path
+  storageClassName: managed-premium-retain
   capacity:
-    storage: 20Mi
+    storage: 10Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
