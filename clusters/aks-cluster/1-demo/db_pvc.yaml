@@ -4,7 +4,7 @@ metadata:
   name: db-pv-claim
   namespace: default
 spec:
-  storageClassName: managed-premium-retain
+  storageClassName: default
   accessModes:
     - ReadWriteOnce
   resources:

@@ -5,7 +5,7 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: managed-premium-retain
+  storageClassName: default
   capacity:
     storage: 10Gi
   accessModes:
