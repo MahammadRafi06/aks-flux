@@ -3,25 +3,23 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: flux-system
+  name: medicalrepo
   namespace: flux-system
 spec:
   interval: 10s
   ref:
     branch: main
-  secretRef:
-    name: flux-system
-  url: ssh://git@github.com/Mahammadrafi06/aks-flux
+  url: https://github.com/MahammadRafi06/ReAct-Agents-Coding-Workflows
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: flux-system
+  name: medicalrepokusto
   namespace: flux-system
 spec:
   interval: 10s
-  path: ./clusters/aks-cluster
+  path: .
   prune: true
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: medicalrepo
