@@ -8,7 +8,9 @@ spec:
   interval: 10s
   ref:
     branch: main
-  url: https://github.com/MahammadRafi06/ReAct-Agents-Coding-Workflows
+  secretRef:
+    name: flux-system
+  url: ssh://git@github.com/MahammadRafi06/ReAct-Agents-Coding-Workflows
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
