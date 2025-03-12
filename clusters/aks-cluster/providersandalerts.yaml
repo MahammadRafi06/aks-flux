@@ -27,7 +27,7 @@ spec:
     env: prod
     cluster: my-cluster
     region: us-east-2
-  eventSeverity: info | error
+  eventSeverity: info 
   eventSources:
     - kind: GitRepository
       name: '*'
