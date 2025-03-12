@@ -19,9 +19,9 @@ metadata:
   name: monitoring-controllers
   namespace: flux-system
 spec:
-  interval: 10s
+  interval: 1m
   retryInterval: 2s
-  timeout: 8s
+  timeout: 30s
   prune: true
   wait: true
   sourceRef:
@@ -37,9 +37,9 @@ metadata:
 spec:
   dependsOn:
     - name: monitoring-controllers
-  interval: 10s
+  interval: 1m
   retryInterval: 2s
-  timeout: 5s
+  timeout: 30s
   prune: true
   wait: true
   sourceRef:
