@@ -1,0 +1,38 @@
+
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Provider
+metadata:
+  name: slack-bot
+  namespace: flux-system
+spec:
+  type: slack
+  channel: fluxtest
+  address: https://slack.com/api/chat.postMessage
+  secretRef:
+    name: slack-bot-token
+  username: flux-bot
+
+---
+apiVersion: notification.toolkit.fluxcd.io/v1beta3
+kind: Alert
+metadata:
+  name: slack
+  namespace: flux-system
+spec:
+  providerRef:
+    name: slack-bot
+  eventMetadata:
+    summary: Cluster addons impacted
+    env: prod
+    cluster: my-cluster
+    region: us-east-2
+  eventSeverity: info | error
+  eventSources:
+    - kind: GitRepository
+      name: '*'
+    - kind: Kustomization
+      name: '*'
+    - kind: HelmRelease
+      name: '*'
+    
