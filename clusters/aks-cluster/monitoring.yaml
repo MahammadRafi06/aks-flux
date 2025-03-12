@@ -26,7 +26,7 @@ spec:
   wait: true
   sourceRef:
     kind: GitRepository
-    name: montoringrepo
+    name: monitoringrepo
   path: ./monitoring/controllers
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
@@ -44,5 +44,5 @@ spec:
   wait: true
   sourceRef:
     kind: GitRepository
-    name: montoringrepo
+    name: monitoringrepo
   path: ./monitoring/configs
