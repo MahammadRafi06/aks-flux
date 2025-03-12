@@ -69,3 +69,19 @@ spec:
   update:
     path: ./manifests
     strategy: Setters
+---
+apiVersion: notification.toolkit.fluxcd.io/v1
+kind: Receiver
+metadata:
+  name: github-webhook-receiver
+  namespace: flux-system
+spec:
+  events:
+  - ping
+  - push
+  resources:
+  - kind: GitRepository
+    name: medicalrepo
+  secretRef:
+    name: github-webhook
+  type: github
